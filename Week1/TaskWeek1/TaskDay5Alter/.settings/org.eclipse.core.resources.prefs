@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/TestClass.java=UTF-8
+encoding//src/task/bin/CustomerBin.java=UTF-8
+encoding//src/task/bin/UserBin.java=UTF-8
+encoding//src/task/dao/BaseDao.java=UTF-8
+encoding//src/task/dao/CustomerDao.java=UTF-8
+encoding//src/task/dao/UserDao.java=UTF-8
+encoding//src/task/view/CustomerAdd.java=UTF-8
+encoding//src/task/view/CustomerDel.java=UTF-8
+encoding//src/task/view/CustomerQuery.java=UTF-8
+encoding//src/task/view/CustomerUpdate.java=UTF-8
+encoding//src/task/view/Menu.java=UTF-8
+encoding//src/task/view/UserLogin.java=UTF-8
