@@ -26,9 +26,9 @@ public class CustomerUpdate {
 			System.out.println("输入电话");
 			String phone=input.next();
 			
-			System.out.println("输入入住时间（格式：yyyy-mm-dd hh:mm:ss）");
+			/*System.out.println("输入入住时间（格式：yyyy-mm-dd hh:mm:ss）");
 			input.nextLine();//消除换行带来的影响
-			String beginTime=input.nextLine();
+			String beginTime=input.nextLine();*/
 			
 			System.out.println("输入房间号");
 			int roomID=input.nextInt();
@@ -37,9 +37,9 @@ public class CustomerUpdate {
 			customer.setName(name);
 			customer.setCID(cid);
 			customer.setPhone(phone);
-			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mm:dd");
+			/*SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mm:dd");
 			Date dt=sdf.parse(beginTime);
-			customer.setBeginTime(dt);
+			customer.setBeginTime(dt);*/
 			customer.setRoomId(roomID);
 			if(cb.updateCustomer(customer)){
 				return true;

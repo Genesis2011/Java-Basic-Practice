@@ -28,8 +28,7 @@ public class CustomerDao extends BaseDao{
 		String sql="UPDATE `mydb`.`Customer` SET `name`='"
 				+customer.getName()+"', `CID`='"
 				+customer.getCID()+"', `phone`='"
-				+customer.getPhone()+"', `beginTime`='"
-				+customer.getBeginTime()+"', `RoomID`='"
+				+customer.getPhone()+"', `beginTime`=sysdate(), `RoomID`='"
 				+customer.getRoomId()+"' WHERE `customer`.`id` = '"
 				+customer.getId()+"'";
 		return updateCommon(sql);

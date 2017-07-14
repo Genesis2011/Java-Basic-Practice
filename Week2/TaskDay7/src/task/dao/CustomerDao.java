@@ -14,11 +14,22 @@ public class CustomerDao extends BaseDao{
 	public int checkAdd(Customer customer){
 		String sql="INSERT INTO `mydb`.`Customer` (`id`, `name`, `CID`, `phone`, `beginTime`, `RoomID`) VALUES (NULL, '"
 					+customer.getName()+"', '"
-					+customer.getCID()+"', '"
+					+customer.getCid()+"', '"
 					+customer.getPhone()+"', sysdate(), '"
 					+customer.getRoomId()+"')";
 		return updateCommon(sql);
 	}
+	public int add(Customer customer){
+		int rel=0;
+		String sql="INSERT INTO `mydb`.`Customer` (`id`, `name`, `CID`, `phone`, `beginTime`, `RoomID`) VALUES (NULL, '"
+					+customer.getName()+"', '"
+					+customer.getCid()+"', '"
+					+customer.getPhone()+"', sysdate(), '"
+					+customer.getRoomId()+"')";
+		rel=updateCommon(sql);
+		return rel;
+	}
+	
 	public int checkDel(Customer customer){
 		String sql="DELETE FROM `mydb`.`Customer` WHERE `customer`.`id` = '"
 					+customer.getId()+"'";
@@ -27,16 +38,32 @@ public class CustomerDao extends BaseDao{
 	public int checkUpdate(Customer customer){
 		String sql="UPDATE `mydb`.`Customer` SET `name`='"
 				+customer.getName()+"', `CID`='"
-				+customer.getCID()+"', `phone`='"
-				+customer.getPhone()+"', `beginTime`=sysdate(), `RoomID`='"
+				+customer.getCid()+"', `phone`='"
+				+customer.getPhone()+"', `beginTime`='"
+				+customer.getBeginTime()+"', `RoomID`='"
 				+customer.getRoomId()+"' WHERE `customer`.`id` = '"
 				+customer.getId()+"'";
 		return updateCommon(sql);
 	}
-	public List<Customer> queryAll(){
+	/*public List<Customer> queryAll(){
+		String sql="SELECT * FROM `customer`";
+		return queryCommon(sql);
+	}*/
+	public List<Customer> query() {
 		String sql="SELECT * FROM `customer`";
 		return queryCommon(sql);
 	}
+	//根据姓名模糊查询
+	public List<Customer> search(String name) {
+		String sql="select * from customer where name like '%"+name+"%'";
+		return queryCommon(sql);
+	}
+	//根据编号查询
+	public List<Customer> search(int id){
+		String sql="select * from customer where id="+id;
+		return queryCommon(sql);
+	}
+	
 	public List<Customer> queryById(Customer customer){
 		String sql="SELECT * FROM `customer` WHERE `id`='"+customer.getId()+"'";
 		return queryCommon(sql);
@@ -88,4 +115,5 @@ public class CustomerDao extends BaseDao{
 		}
 		return list;
 	}
+	
 }
